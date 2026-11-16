@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIM · Materi Perdana · Lengkap 16:9</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #e8e4dc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      gap: 1.8rem;
+    }
+
+    /* ===== SLIDE LANDSCAPE 16:9 ===== */
+    .slide {
+      width: 100%;
+      max-width: 960px;
+      aspect-ratio: 16 / 9;
+      background: #ffffff;
+      border-radius: 1.4rem;
+      box-shadow: 0 25px 60px -20px rgba(0, 20, 30, 0.25);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 2.4rem;
+      border: 1px solid #d6cfc2;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 33px,
+        #f0ece4 33px,
+        #f0ece4 34px
+      );
+      background-position: 0 2rem;
+      background-size: 100% 34px;
+    }
+
+    @media (max-width: 700px) {
+      .slide {
+        padding: 1.2rem 1.2rem;
+        border-radius: 1rem;
+        aspect-ratio: auto;
+        min-height: 420px;
+        background-size: 100% 30px;
+        background-position: 0 1.2rem;
+      }
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    .arabic {
+      font-family: 'Amiri', serif;
+      direction: rtl;
+      text-align: right;
+      line-height: 2;
+      color: #0e3b3c;
+    }
+    .arabic-center {
+      font-family: 'Amiri', serif;
+      direction: rtl;
+      text-align: center;
+      line-height: 2;
+      color: #0e3b3c;
+    }
+    .arabic-inline {
+      font-family: 'Amiri', serif;
+      font-size: 1rem;
+      direction: rtl;
+      unicode-bidi: embed;
+      color: #164a4b;
+    }
+
+    .slide h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0d3e3f;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    .slide h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #164a4b;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .slide h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e5a5c;
+      margin-bottom: 0.2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .slide p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #2b4b4b;
+      margin-bottom: 0.35rem;
+    }
+
+    .slide .sub {
+      font-size: 0.8rem;
+      color: #6b8585;
+      font-weight: 500;
+    }
+
+    .slide .label {
+      display: inline-block;
+      background: #bc9b5a;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.15rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.65rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .slide .label-dark { background: #164a4b; color: #f2eee7; }
+
+    .ayah-box {
+      background: #f5f1e9;
+      padding: 0.7rem 1rem;
+      border-radius: 0.8rem;
+      margin: 0.5rem 0;
+      border-right: 4px solid #bc9b5a;
+    }
+    .ayah-box .arabic {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+      color: #1d4e4f;
+    }
+    .ayah-box .translation {
+      color: #2b4b4b;
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+    .ayah-box .surah {
+      font-weight: 600;
+      color: #9b7c44;
+      font-size: 0.75rem;
+    }
+
+    .quote {
+      padding: 0.5rem 0.8rem;
+      background: #f3efe8;
+      border-radius: 0.6rem;
+      border-left: 3px solid #bc9b5a;
+      margin: 0.4rem 0;
+      font-size: 0.85rem;
+      color: #2c4d4d;
+    }
+    .quote .q-ar {
+      font-family: 'Amiri', serif;
+      font-size: 1rem;
+      direction: rtl;
+      text-align: right;
+      color: #1b4a4a;
+      display: block;
+      margin-bottom: 0.1rem;
+      line-height: 1.8;
+    }
+
+    .prinsip {
+      background: #ebf3f1;
+      border-radius: 0.7rem;
+      padding: 0.5rem 0.9rem;
+      font-weight: 600;
+      color: #1b4a4a;
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+    }
+    .prinsip i { color: #bc9b5a; font-size: 1rem; }
+
+    .keyword-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin: 0.5rem 0;
+    }
+    .keyword {
+      background: #e7e1d3;
+      border-radius: 60px;
+      padding: 0.25rem 0.8rem;
+      font-weight: 600;
+      color: #1e4d4e;
+      font-size: 0.75rem;
+      border: 1px solid #cfc1a8;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .keyword strong { color: #9b7c44; }
+    .keyword .ar-inline {
+      font-family: 'Amiri', serif;
+      font-size: 0.9rem;
+      direction: rtl;
+    }
+
+    .mitos-card {
+      background: #fff8f0;
+      border-radius: 0.7rem;
+      padding: 0.5rem 0.8rem;
+      margin: 0.35rem 0;
+      border: 1px solid #f0e2d0;
+    }
+    .mitos-card .mitos-label {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      color: #c0392b;
+      text-transform: uppercase;
+    }
+    .mitos-card .mitos-text {
+      font-weight: 600;
+      color: #5a2e1e;
+      font-size: 0.82rem;
+      margin-bottom: 0.15rem;
+    }
+    .mitos-card .fakta-label {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      color: #1e7a4a;
+      text-transform: uppercase;
+    }
+    .mitos-card .fakta-text {
+      font-size: 0.8rem;
+      color: #2b4b4b;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin: 0.4rem 0;
+    }
+    .quiz-item {
+      background: #f9f7f2;
+      border-radius: 0.6rem;
+      padding: 0.5rem 0.7rem;
+      border: 1px solid #e6dfd1;
+    }
+    .quiz-item .q-text {
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: #1e3b3b;
+      margin-bottom: 0.2rem;
+    }
+    .quiz-item .q-options {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      color: #506e6f;
+    }
+    .quiz-item .q-options span {
+      background: #e7e1d3;
+      padding: 0.1rem 0.5rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 0.5rem;
+      margin: 0.4rem 0;
+    }
+    .skill-card {
+      background: #f5f1e9;
+      border-radius: 0.7rem;
+      padding: 0.5rem 0.6rem;
+      border: 1px solid #e0d6c4;
+      text-align: center;
+    }
+    .skill-card .ar-title {
+      font-family: 'Amiri', serif;
+      font-size: 1rem;
+      color: #164a4b;
+      direction: rtl;
+      text-align: center;
+      font-weight: 700;
+    }
+    .skill-card .id-title {
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: #1e4d4e;
+    }
+    .skill-card .desc {
+      font-size: 0.7rem;
+      color: #5c7373;
+    }
+
+    .prinsip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.6rem;
+      margin: 0.4rem 0;
+    }
+    .prinsip-item {
+      background: #f5f1e9;
+      border-radius: 0.7rem;
+      padding: 0.5rem 0.7rem;
+      border-left: 4px solid #bc9b5a;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .prinsip-item .num-big {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #bc9b5a;
+      line-height: 1;
+      min-width: 1.8rem;
+    }
+    .prinsip-item .ar-head {
+      font-family: 'Amiri', serif;
+      font-size: 0.95rem;
+      color: #164a4b;
+      font-weight: 700;
+      direction: rtl;
+      text-align: right;
+    }
+    .prinsip-item .id-head {
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: #1e4d4e;
+    }
+    .prinsip-item .desc {
+      font-size: 0.7rem;
+      color: #5c7373;
+    }
+
+    .dialog-box {
+      background: #f5f1e9;
+      border-radius: 0.7rem;
+      padding: 0.6rem 1rem;
+      margin: 0.4rem 0;
+      font-family: 'Amiri', serif;
+      font-size: 0.92rem;
+      direction: rtl;
+      text-align: right;
+      line-height: 1.9;
+      color: #0e3b3c;
+      border: 1px solid #e0d6c4;
+    }
+    .dialog-box .speaker {
+      font-weight: 700;
+      color: #9b7c44;
+    }
+
+    .closing-box {
+      background: #194f50;
+      color: #f2eee7;
+      padding: 0.9rem 1.2rem;
+      border-radius: 1rem;
+      text-align: center;
+      margin-top: 0.4rem;
+    }
+    .closing-box .arabic {
+      font-size: 1.1rem;
+      color: #f7e4c1;
+      direction: rtl;
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+    .closing-box p {
+      font-size: 0.8rem;
+      opacity: 0.92;
+      color: #f2eee7;
+    }
+
+    .slide-footer {
+      margin-top: auto;
+      padding-top: 0.4rem;
+      font-size: 0.65rem;
+      color: #a89f8e;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #ede8de;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      flex: 1;
+      min-height: 0;
+    }
+    .col { display: flex; flex-direction: column; }
+
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; gap: 0.4rem; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .prinsip-grid { grid-template-columns: 1fr; }
+      .quiz-grid { grid-template-columns: 1fr; }
+      .slide h1 { font-size: 1.5rem; }
+      .slide h2 { font-size: 1.1rem; }
+      .slide p { font-size: 0.8rem; }
+      .ayah-box .arabic { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 1: COVER -->
+  <!-- ============================================================= -->
+  <div class="slide" style="justify-content: center; align-items: center; text-align: center;">
+    <div class="label" style="margin-bottom: 0.6rem;">MADRASAH ILMU MARHABAN</div>
+    <div class="arabic-center" style="font-size: 2rem; margin-bottom: 0.3rem; color: #164a4b;">لَا تَخَفْ، تَعَلَّمِ الْعَرَبِيَّةَ!</div>
+    <h1 style="font-size: 2.6rem; text-align: center;">Jangan Takut Belajar Bahasa Arab!</h1>
+    <p style="font-size: 1rem; color: #6b8585; margin-top: 0.3rem;">Membongkar Mitos, Meluruskan Kesalahan, Membangun Semangat</p>
+    <div style="margin-top: 0.8rem; width: 100px; height: 3px; background: #bc9b5a; border-radius: 10px;"></div>
+    <p style="margin-top: 0.6rem; font-size: 0.8rem; color: #9b7c44; font-weight: 600;">PROGRAM PERDANA · KELAS BAHASA ARAB</p>
+    <div class="slide-footer" style="width: 100%; border-top: none; padding-top: 0; margin-top: 0.8rem;">
+      <span>MIM · 2026</span>
+      <span>01 / 11</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 2: PEMBUKA -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label">BAGIAN 1 · PEMBUKA</div>
+    <h2>Mengapa Kita Harus Belajar Bahasa Arab?</h2>
+
+    <div class="two-col" style="margin-top: 0.3rem;">
+      <div class="col">
+        <p style="font-weight: 600; color: #164a4b; font-size: 0.85rem;">Pertanyaan pemantik:</p>
+        <div style="display: flex; flex-direction: column; gap: 0.3rem; margin: 0.3rem 0;">
+          <div style="background: #f5f1e9; border-radius: 0.6rem; padding: 0.35rem 0.7rem; font-size: 0.8rem;">Berapa lama kita sudah belajar bahasa Arab?</div>
+          <div style="background: #f5f1e9; border-radius: 0.6rem; padding: 0.35rem 0.7rem; font-size: 0.8rem;">Apakah kita sudah mampu memahami percakapan sederhana?</div>
+          <div style="background: #f5f1e9; border-radius: 0.6rem; padding: 0.35rem 0.7rem; font-size: 0.8rem;">Apakah kita bisa mengungkapkan keinginan dalam bahasa Arab?</div>
+          <div style="background: #f5f1e9; border-radius: 0.6rem; padding: 0.35rem 0.7rem; font-size: 0.8rem;">Apakah kita memahami ayat Al-Qur'an yang kita baca setiap hari?</div>
+        </div>
+      </div>
+      <div class="col">
+        <p style="font-size: 0.85rem;">Terkadang kita sudah bertahun-tahun mempelajari bahasa Arab, tetapi masih kesulitan memahami percakapan sederhana.</p>
+        <p style="font-weight: 700; color: #164a4b; font-size: 0.9rem; margin-top: 0.3rem;">Mengapa demikian?</p>
+        <p style="font-size: 0.85rem;">Apakah bahasa Arab memang sulit, atau mungkin ada yang keliru dalam cara kita mempelajarinya?</p>
+        <div class="prinsip" style="margin-top: 0.4rem;">
+          <i class="fas fa-lightbulb"></i> Renungkan: mungkin masalahnya bukan pada bahasa Arab, tetapi pada metode dan konsistensi kita.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer"><span>MIM · Materi Perdana</span><span>02 / 11</span></div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 3: BAHASA ARAB MULIA -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label label-dark">BAGIAN 1 · LANJUTAN</div>
+    <h2>Bahasa Arab adalah Bahasa yang Mulia</h2>
+
+    <div class="two-col" style="margin-top: 0.3rem;">
+      <div class="col">
+        <p>Allah berfirman:</p>
+        <div class="ayah-box">
+          <div class="arabic">وَكَذَٰلِكَ أَنْزَلْنَاهُ قُرْآنًا عَرَبِيًّا</div>
+          <div class="translation"><span class="surah">QS. Thaha: 113</span> — "Demikianlah Kami menurunkannya berupa Al-Qur'an berbahasa Arab."</div>
+        </div>
+      </div>
+      <div class="col">
+        <p>Bahasa Arab memiliki kedudukan istimewa karena merupakan bahasa Al-Qur'an dan menjadi sarana penting untuk memahami sumber-sumber ajaran Islam.</p>
+        <div class="prinsip" style="margin-top: 0.3rem;">
+          <i class="fas fa-star"></i> Belajar bahasa Arab bukan sekadar belajar bahasa asing, tetapi membuka jalan untuk memahami agama dengan lebih baik.
+        </div>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem;">
+          <span class="keyword"><span class="ar-inline">القرآن</span> Al-Qur'an</span>
+          <span class="keyword"><span class="ar-inline">السنة</span> Sunnah</span>
+          <span class="keyword"><span class="ar-inline">العلماء</span> Ulama</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer"><span>MIM · Materi Perdana</span><span>03 / 11</span></div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 4: MITOS 1-3 -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label">BAGIAN 2 · SESI UTAMA</div>
+    <h2>Membongkar 10 Mitos Belajar Bahasa Arab</h2>
+    <p class="sub" style="margin-bottom: 0.3rem;">Meluruskan cara pandang — Mitos 1–3</p>
+
+    <div class="two-col" style="flex: 1; min-height: 0;">
+      <div class="col" style="gap: 0.4rem;">
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 1</div>
+          <div class="mitos-text">"Bahasa Arab itu sulit. Hanya orang cerdas yang bisa menguasainya."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Bahasa Arab dapat dipelajari siapa saja. Yang dibutuhkan: kemauan, kesungguhan, metode tepat, dan latihan konsisten.</div>
+        </div>
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 2</div>
+          <div class="mitos-text">"Saya belum bisa berbicara karena belum menguasai nahwu dan sharaf."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Nahwu dan sharaf penting, tetapi jangan menjadikannya penghalang untuk mulai berbicara. Pelajari kaidah bersamaan dengan praktik.</div>
+        </div>
+      </div>
+      <div class="col" style="gap: 0.4rem;">
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 3</div>
+          <div class="mitos-text">"Kalau sudah hafal 1.000 mufradat, berarti sudah bisa bahasa Arab."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Menghafal kosakata adalah modal, bukan tujuan akhir. Kosakata harus digunakan dalam kalimat, dialog, dan komunikasi.</div>
+        </div>
+        <div class="prinsip" style="margin-top: 0.2rem;">
+          <i class="fas fa-quote-right"></i> "Ilmu tanpa amal seperti pohon tanpa buah." — Kosakata tanpa praktik tidak akan menghasilkan kemahiran.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer"><span>MIM · Materi Perdana</span><span>04 / 11</span></div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 5: MITOS 4-7 -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label">BAGIAN 2 · LANJUTAN</div>
+    <h2>Mitos 4 – 7</h2>
+
+    <div class="two-col" style="flex: 1; min-height: 0;">
+      <div class="col" style="gap: 0.3rem;">
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 4</div>
+          <div class="mitos-text">"Berbicara bahasa Arab harus dimulai dengan berpikir dalam bahasa Indonesia, lalu menerjemahkannya."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Biasakan memahami dan menggunakan ungkapan bahasa Arab secara langsung. Semakin sering berlatih, semakin terbentuk kebiasaan berpikir dalam bahasa Arab.</div>
+        </div>
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 5</div>
+          <div class="mitos-text">"Lebih baik diam daripada berbicara dengan bahasa Arab yang salah."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Kesalahan adalah bagian dari proses belajar. Jangan takut salah, tetapi jangan pula berhenti memperbaiki kesalahan.</div>
+        </div>
+      </div>
+      <div class="col" style="gap: 0.3rem;">
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 6</div>
+          <div class="mitos-text">"Yang penting saya bisa membaca dan menerjemahkan kitab."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Bahasa adalah alat komunikasi. Belajar bahasa Arab juga mencakup menyimak, berbicara, membaca, dan menulis.</div>
+        </div>
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 7</div>
+          <div class="mitos-text">"Kalau tidak tinggal di Arab Saudi, mustahil bisa lancar bahasa Arab."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Lingkungan bahasa memang membantu, tetapi lingkungan belajar dapat dibangun di mana saja melalui pembiasaan dan latihan.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer"><span>MIM · Materi Perdana</span><span>05 / 11</span></div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 6: MITOS 8-10 + 3 KESALAHAN -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label">BAGIAN 2 & 3</div>
+    <h2>Mitos 8 – 10 &amp; 3 Kesalahan Besar</h2>
+
+    <div class="two-col" style="flex: 1; min-height: 0;">
+      <div class="col" style="gap: 0.3rem;">
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 8</div>
+          <div class="mitos-text">"Yang penting hadir di kelas setiap pekan."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Kemampuan bahasa membutuhkan pengulangan. Latihan 15–20 menit setiap hari dapat membantu menjaga kesinambungan belajar.</div>
+        </div>
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 9</div>
+          <div class="mitos-text">"Saya bisa menerjemahkan teks Arab, berarti saya sudah mahir."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Membaca dan berbicara adalah dua keterampilan berbeda. Keduanya harus dilatih secara khusus.</div>
+        </div>
+        <div class="mitos-card">
+          <div class="mitos-label">Mitos 10</div>
+          <div class="mitos-text">"Belajar bahasa Arab itu hanya menghafal, menerjemahkan, dan mengerjakan soal."</div>
+          <div class="fakta-label">Fakta</div>
+          <div class="fakta-text">Belajar bahasa Arab bisa menyenangkan melalui percakapan, permainan, cerita, dialog, dan aktivitas interaktif.</div>
+        </div>
+      </div>
+      <div class="col">
+        <h3 style="margin-top: 0;"><i class="fas fa-exclamation-triangle" style="color: #c0392b;"></i> 3 Kesalahan Besar</h3>
+        <div style="display: flex; flex-direction: column; gap: 0.35rem; margin-top: 0.3rem;">
+          <div style="background: #fff5f0; border-radius: 0.6rem; padding: 0.4rem 0.7rem; font-size: 0.82rem; border-left: 4px solid #c0392b;"><strong>1.</strong> Terlalu banyak teori, terlalu sedikit praktik.</div>
+          <div style="background: #fff5f0; border-radius: 0.6rem; padding: 0.4rem 0.7rem; font-size: 0.82rem; border-left: 4px solid #c0392b;"><strong>2.</strong> Ingin cepat mahir, tetapi tidak konsisten.</div>
+          <div style="background: #fff5f0; border-radius: 0.6rem; padding: 0.4rem 0.7rem; font-size: 0.82rem; border-left: 4px solid #c0392b;"><strong>3.</strong> Belajar tanpa tujuan yang jelas.</div>
+        </div>
+        <div class="prinsip" style="margin-top: 0.4rem;">
+          <i class="fas fa-check-circle"></i> Sadari kesalahan → perbaiki metode → mulai praktik hari ini.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer"><span>MIM · Materi Perdana</span><span>06 / 11</span></div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 7: 4 KETERAMPILAN + KITAB -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label">BAGIAN 4</div>
+    <h2>Bagaimana Seharusnya Kita Belajar?</h2>
+    <p class="sub">Empat keterampilan yang harus dikuasai</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="ar-title">الاستماع</div>
+        <div class="id-title">Al-Istima'</div>
+        <div class="desc">Menyimak dan memahami bahasa Arab.</div>
+      </div>
+      <div class="skill-card">
+        <div class="ar-title">الكلام</div>
+        <div class="id-title">Al-Kalam</div>
+        <div class="desc">Berbicara dan berkomunikasi.</div>
+      </div>
+      <div class="skill-card">
+        <div class="ar-title">القراءة</div>
+        <div class="id-title">Al-Qira'ah</div>
+        <div class="desc">Membaca dan memahami teks.</div>
+      </div>
+      <div class="skill-card">
+        <div class="ar-title">الكتابة</div>
+        <div class="id-title">Al-Kitabah</div>
+        <div class="desc">Menulis kata dan kalimat.</div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 0.8rem; flex: 1; min-height: 0; margin-top: 0.3rem;">
+      <div style="flex: 1; background: #f5f1e9; border-radius: 0.8rem; padding: 0.6rem 0.9rem; border: 1px solid #e0d6c4;">
+        <div class="arabic" style="font-size: 1.1rem; text-align: center;">العربية بين يديك</div>
+        <div style="text-align: center; font-weight: 700; font-size: 0.82rem; color: #164a4b;">Al-'Arabiyyah Bayna Yadaik</div>
+        <p style="font-size: 0.78rem; margin-top: 0.2rem;">Buku pembelajaran bahasa Arab dengan pendekatan komunikatif, disusun bertahap dan dilengkapi latihan untuk mengembangkan empat keterampilan bahasa.</p>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 0.85rem;">Di MIM, kita tidak hanya akan mempelajari isi buku, tetapi juga berusaha menggunakannya dalam praktik.</p>
+        <div class="prinsip" style="margin-top: 0.3rem;">
+          <i class="fas fa-book-open"></i> Buku adalah alat, praktik adalah kunci.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer"><span>MIM · Materi Perdana</span><span>07 / 11</span></div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 8: KUIS INTERAKTIF -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label">BAGIAN 5 · SESI INTERAKTIF</div>
+    <h2>Kuis: Mitos atau Fakta?</h2>
+    <p class="sub">Pilih jawaban sebelum pengajar memberikan penjelasan.</p>
+
+    <div class="quiz-grid">
+      <div class="quiz-item">
+        <div class="q-text">1. Untuk bisa berbicara bahasa Arab, kita harus menguasai seluruh nahwu terlebih dahulu.</div>
+        <div class="q-options"><span>Benar</span><span>Salah</span></div>
+      </div>
+      <div class="quiz-item">
+        <div class="q-text">2. Menghafal kosakata tanpa menggunakannya dalam kalimat sudah cukup untuk mahir.</div>
+        <div class="q-options"><span>Benar</span><span>Salah</span></div>
+      </div>
+      <div class="quiz-item">
+        <div class="q-text">3. Kesalahan ketika berbicara merupakan bagian dari proses belajar.</div>
+        <div class="q-options"><span>Benar</span><span>Salah</span></div>
+      </div>
+      <div class="quiz-item">
+        <div class="q-text">4. Bahasa Arab hanya bisa dikuasai jika tinggal di negara Arab.</div>
+        <div class="q-options"><span>Benar</span><span>Salah</span></div>
+      </div>
+      <div class="quiz-item">
+        <div class="q-text">5. Menyimak, berbicara, membaca, dan menulis perlu dilatih bersama.</div>
+        <div class="q-options"><span>Benar</span><span>Salah</span></div>
+      </div>
+      <div class="quiz-item" style="background: #ebf3f1; border-color: #c5d9d5;">
+        <div class="q-text" style="color: #164a4b;">Jawaban: 1-S, 2-S, 3-B, 4-S, 5-B</div>
+        <div class="q-options" style="color: #506e6f;">Diskusikan bersama!</div>
+      </div>
+    </div>
+
+    <div class="slide-footer"><span>MIM · Materi Perdana</span><span>08 / 11</span></div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 9: KOMITMEN + 3 PRINSIP -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label label-dark">BAGIAN 6 · KOMITMEN BERSAMA</div>
+    <h2 style="font-size: 1.2rem;">Tiga Prinsip Kesuksesan</h2>
+    <div class="arabic-center" style="font-size: 1.1rem; margin-bottom: 0.2rem; color: #164a4b;">ثَلَاثَةُ مَبَادِئَ لِلنَّجَاحِ</div>
+
+    <div class="prinsip-grid">
+      <div class="prinsip-item">
+        <div class="num-big">01</div>
+        <div>
+          <div class="ar-head">المُمَارَسَةُ</div>
+          <div class="id-head">Praktik, bukan hanya teori</div>
+          <div class="desc">Belajar menggunakan bahasa Arab, bukan sekadar mengetahui kaidahnya.</div>
+        </div>
+      </div>
+      <div class="prinsip-item">
+        <div class="num-big">02</div>
+        <div>
+          <div class="ar-head">الِاسْتِمْرَارُ</div>
+          <div class="id-head">Konsisten, bukan sesekali</div>
+          <div class="desc">Sedikit tetapi rutin lebih baik daripada banyak tetapi jarang.</div>
+        </div>
+      </div>
+      <div class="prinsip-item">
+        <div class="num-big">03</div>
+        <div>
+          <div class="ar-head">الصَّبْرُ</div>
+          <div class="id-head">Sabar dalam proses</div>
+          <div class="desc">Tidak harus langsung mahir. Yang penting terus belajar dan memperbaiki diri.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prinsip" style="margin-top: 0.3rem; justify-content: center;">
+      <i class="fas fa-heart" style="color: #c0392b;"></i> Jangan menunggu sempurna untuk memulai. Mulailah dari yang sederhana, beranilah mencoba, dan jangan berhenti berlatih.
+    </div>
+
+    <div class="slide-footer"><span>MIM · Materi Perdana</span><span>09 / 11</span></div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 10: PRAKTIK PERTAMA — DIALOG -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label">BAGIAN 7 · PRAKTIK PERTAMA</div>
+    <h2>أَنَا أَتَعَلَّمُ الْعَرَبِيَّةَ — Saya Belajar Bahasa Arab</h2>
+    <p class="sub">Akhiri pertemuan dengan membuat seluruh peserta berani berbicara bahasa Arab.</p>
+
+    <div class="two-col" style="margin-top: 0.3rem; flex: 1; min-height: 0;">
+      <div class="col">
+        <div class="dialog-box">
+          <span class="speaker">المُعَلِّمُ:</span> مَا اسْمُكَ؟<br>
+          <span class="speaker">الطَّالِبُ:</span> اسْمِي أَحْمَدُ.<br>
+          <span class="speaker">المُعَلِّمُ:</span> مِنْ أَيْنَ أَنْتَ؟<br>
+          <span class="speaker">الطَّالِبُ:</span> أَنَا مِنْ غَارُوتَ.<br>
+          <span class="speaker">المُعَلِّمُ:</span> لِمَاذَا تَتَعَلَّمُ اللُّغَةَ الْعَرَبِيَّةَ؟<br>
+          <span class="speaker">الطَّالِبُ:</span> أَتَعَلَّمُ اللُّغَةَ الْعَرَبِيَّةَ لِأَفْهَمَ الْقُرْآنَ وَالسُّنَّةَ.
+        </div>
+      </div>
+      <div class="col">
+        <div style="background: #f5f1e9; border-radius: 0.8rem; padding: 0.7rem 0.9rem; border: 1px solid #e0d6c4;">
+          <p style="font-weight: 700; color: #164a4b; font-size: 0.85rem; margin-bottom: 0.3rem;">Terjemahan Dialog:</p>
+          <p style="font-size: 0.82rem;"><strong>Guru:</strong> Siapa namamu?</p>
+          <p style="font-size: 0.82rem;"><strong>Siswa:</strong> Namaku Ahmad.</p>
+          <p style="font-size: 0.82rem;"><strong>Guru:</strong> Dari mana asalmu?</p>
+          <p style="font-size: 0.82rem;"><strong>Siswa:</strong> Aku dari Garut.</p>
+          <p style="font-size: 0.82rem;"><strong>Guru:</strong> Mengapa kamu belajar bahasa Arab?</p>
+          <p style="font-size: 0.82rem;"><strong>Siswa:</strong> Aku belajar bahasa Arab untuk memahami Al-Qur'an dan Sunnah.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer"><span>MIM · Materi Perdana</span><span>10 / 11</span></div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SLIDE 11: PENUTUP + PESAN + DOA -->
+  <!-- ============================================================= -->
+  <div class="slide">
+    <div class="label label-dark">PENUTUP</div>
+    <h2>Pesan yang Harus Dibawa Pulang</h2>
+
+    <div style="background: #f5f1e9; border-radius: 1rem; padding: 0.9rem 1.2rem; border-left: 5px solid #bc9b5a; margin: 0.4rem 0;">
+      <p style="font-size: 0.88rem; line-height: 1.7; color: #1e3b3b;">
+        <em>"Saudara-saudaraku, jangan sampai kita menghabiskan waktu bertahun-tahun mempelajari bahasa Arab, tetapi masih takut mengucapkan satu kalimat sederhana.</em>
+      </p>
+      <p style="font-size: 0.88rem; line-height: 1.7; color: #1e3b3b; margin-top: 0.3rem;">
+        <em>Jangan menunggu sempurna untuk memulai. Mulailah dari yang sederhana, beranilah mencoba, dan jangan berhenti berlatih.</em>
+      </p>
+      <p style="font-size: 0.88rem; line-height: 1.7; color: #1e3b3b; margin-top: 0.3rem;">
+        <em>Kita tidak sedang berlomba menjadi orang yang paling cepat menguasai bahasa Arab. Kita sedang menempuh perjalanan untuk memahami bahasa Al-Qur'an, bahasa Rasulullah ﷺ, dan bahasa para ulama.</em>
+      </p>
+      <p style="font-size: 0.88rem; line-height: 1.7; color: #1e3b3b; margin-top: 0.3rem;">
+        <em>Semoga Allah memberikan kemudahan dan keberkahan dalam perjalanan menuntut ilmu ini."</em>
+      </p>
+    </div>
+
+    <div class="closing-box" style="margin-top: 0.4rem; padding: 1rem 1.2rem;">
+      <div class="arabic">اللَّهُمَّ عَلِّمْنَا مَا يَنْفَعُنَا، وَانْفَعْنَا بِمَا عَلَّمْتَنَا، وَزِدْنَا عِلْمًا</div>
+      <p style="font-size: 0.82rem; margin-top: 0.3rem;">"Ya Allah, ajarkanlah kepada kami ilmu yang bermanfaat, berikanlah manfaat dari apa yang Engkau ajarkan kepada kami, dan tambahkanlah ilmu kepada kami."</p>
+    </div>
+
+    <div style="display: flex; gap: 0.6rem; margin-top: 0.4rem; justify-content: center;">
+      <span class="keyword"><span class="ar-inline">الممارسة</span> Praktik</span>
+      <span class="keyword"><span class="ar-inline">الاستمرار</span> Konsisten</span>
+      <span class="keyword"><span class="ar-inline">الصبر</span> Sabar</span>
+    </div>
+
+    <div class="slide-footer" style="margin-top: 0.3rem;"><span>MIM · Materi Perdana</span><span>11 / 11</span></div>
+  </div>
+
+</body>
+</html>
